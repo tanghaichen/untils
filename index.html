@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>until官方网站</title>
+    <link rel="icon" href="http://ongws8xiz.bkt.clouddn.com/ic.png">
+    <script src="js/units.js"></script>
+</head>
+<style>
+body{
+    min-width: 600px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+aside>ul>li {
+    border-bottom: 1px solid black;
+    padding: 10px;
+    padding-left: 20px;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+aside>ul>li:hover {
+    background: #aed8c6;
+    font-weight: bold;
+}
+
+body {
+    background: #306364;
+    height: 100%;
+    /*padding-top:50px;*/
+}
+
+aside {
+    width: 23%;
+    background: lightyellow;
+    float: left;
+}
+
+aside,
+.main {
+    border-radius: 15px;
+}
+
+header {
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    -webkit-user-select: none;
+}
+
+h3 {
+    padding-top: 10px;
+}
+
+.h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+header>span {
+    font-style: italic;
+}
+
+.body {
+    width: 90%;
+    /*  margin-top: 50px;*/
+    margin: 0 auto;
+}
+
+.main {
+    background: #ddd;
+    width: 75%;
+    float: right;
+    padding: 30px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+.main .title {
+    font-size: 26px;
+    line-height: 2;
+}
+
+.main .way {
+    font-size: 22px;
+    line-height: 2
+}
+
+.main .user {
+    font-size: 22px;
+    line-height: 2;
+}
+
+.main .stage {
+    font-size: 18px;
+    line-height: 2;
+}
+
+.main .pre {
+    font-size: 20px;
+    line-height: 2;
+    font-weight: 700;
+}
+
+.disNone {
+    display: none;
+}
+
+.disBlock {
+    display: block;
+}
+
+@media (max-width:600px) {
+    aside {
+        width: 100%;
+    }
+    .main {
+        width: 100%;
+    }
+}
+
+.thc {
+    display: block;
+    width: 150px;
+    border: 2px solid black;
+}
+</style>
+
+<body>
+    <div class="body">
+        <header>
+            <span>until</span>&nbsp;的官方网站
+        </header>
+        <aside>
+            <ul class="ul">
+                <li>简介</li>
+                <li>tFixedAside</li>
+                <li>tFixedNav</li>
+                <li>tHotNews</li>
+            </ul>
+        </aside>
+        <div class="aritcle">
+            <div class="main disBlock">
+                <h3>这是一款超轻量级的 javascript 插件,其中包括了我们在开发时候常用的一些小功能。此插件是由原生JS所写，不需要引入其他依赖，只需要引入该插件按照对应方法即可使用。</h3>
+                <h2 class="h2">您可以点击左侧各个方法名称来查看具体作用并使用。</h2>
+                <h2 class="h2">下载方法：</h2>
+                <h3>代码开源在github上，您可以<a href="https://github.com/tanghaichen/untils/js/archive/master.zip">点击下载</a>并进行下载。如果能随手给个star那就更好不过了$_$</h3>
+                <h3>此款插件完全由我个人开发，所以难免有不足之处。如果在您的使用各种有任何问题 ，可以与我联系。我会马上改正我所犯下的错误并在注明您对此所作出的贡献。欢迎指正！</h3>
+                <h2 class="h2">联系我</h2>
+                <h3>我的邮箱 : tanghaichen1994@foxmail.com。</h3>
+                <h3>github: <a href="https://github.com/tanghaichen">点击访问</a></h3>
+                <h3>我的博客: <a href="http://tanghaichen.win">点击进入</a></h3>
+                <h3>感谢您的本插件的支持及使用！！</h3>
+            </div>
+            <div class="main disNone">
+                <h3 class="title">tFixedAside</h3>
+                <h4 class="way">功能介绍：</h4>
+                <p class="stage">它所实现的功能就是让一个div可以圆滑的固定在页面上，不会随着页面的 滚动而消失，适用于一些需要一直显示给用户看的模块上</p>
+                <h4 class="user">使用方法：</h4>
+                <div class="stage">获取到所需要实现此功能的模块，并且在之后引用tFixedAside即可。
+                    <pre class="pre">
+var oDiv=document.getElementById('div');
+until.tFixedAside(oDiv);
+            </pre>
+                </div>
+            </div>
+            <div class="main disNone">
+                <h3 class="title">tFixedNav</h3>
+                <h4 class="way">功能介绍：</h4>
+                <p class="stage">它所实现的功能就是让一个元素在滑动到其高度的时候，就固定在顶部。如果再次返回还是再次随页面滚动</p>
+                <h4 class="user">使用方法：</h4>
+                <div class="stage">获取到所需要实现此功能的模块，并且在之后引用tFixedAside即可。
+                    <pre class="pre">
+var oDiv=document.getElementById('div');
+until.tFixedNav(oDiv);
+            </pre>
+                </div>
+            </div>
+            <div class="main disNone">
+                <h3 class="title">tHotNews</h3>
+                <h4 class="way">功能介绍：</h4>
+                <p class="stage">它所实现的功能就是让一个元素在滑动到其高度的时候，就固定在顶部。如果再次返回还是再次随页面滚动</p>
+                <h4 class="user">使用方法：</h4>
+                <div class="stage">获取到所需要实现此功能的模块，并且在之后引用tFixedAside即可。
+                    <pre class="pre">
+var oDiv=document.getElementById('div');
+until.tHotNews(oDiv,{
+        news: ['这里是默认文字'],
+        target: ['http://www.baidu.com'],
+        everyItem: 2000,
+        everyText: 100
+});</pre>
+<span>第二个参数可以不填,也可以之选择其中某一项来修改。其中的target为a标签的href，默认随news的长度为‘#’,也可以一个个填入对应链接。everyItem为切换不同条目所需的时间，everyText为每个文字出现的时间。例如这样</span>
+<div class="pre">until.tHotNews(oDiv,{everyText: 400});</div>
+<span>每400毫秒出来一个字</span>
+                </div>
+                <a href="" class="thc"></a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+var asideLi = document.getElementsByClassName('ul')[0].children;
+var oDiv = document.getElementsByClassName('aritcle')[0].children;
+for (var i = 0; i < asideLi.length; i++) {
+
+    asideLi[i].index = i;
+    asideLi[i].onclick = function() {
+        for (var i = 0; i < oDiv.length; i++) {
+            oDiv[i].style.display = 'none'
+        }
+        oDiv[this.index].style.display = 'block'
+    }
+}
+//实例
+var thc = document.getElementsByClassName('thc')[0]
+until.tHotNews(thc,{})
+</script>
+
+</html>
