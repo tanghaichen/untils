@@ -9,12 +9,12 @@
 
 ### V1.0.1
 
-- 修复了使用margin或padding时会出现的不正常情况。
-- 修复了弹出文字效果个数不匹配出现的undefined问题。
+- 修复了当引用jQuery时修改了Object的原型导致的jQuery遍历错误。
 
 ### V1.0.2
 
-- 修复了当引用jQuery时修改了Object的原型导致的jQuery遍历错误。
+- 修复了使用margin或padding时会出现的不正常情况。
+- 修复了弹出文字效果个数不匹配出现的undefined问题。
 
 ## 开发人员
 

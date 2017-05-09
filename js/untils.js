@@ -110,6 +110,100 @@ Until.prototype = {
             tNextText = setInterval(arguments.callee, everyText);
         }
     },
+    //4-->倒计时
+    tcountDown: function(div, options, off) {
+        var demo = div;
+        var _default = {
+            year: 2100,
+            month: 12,
+            day: 31,
+            hour: 23,
+            minute: 59,
+            second: 59
+        }
+        if (off === undefined) {
+            var off = '[好日子]';
+        }
+        for (var key in options) {
+            if (options.hasOwnProperty(key)) {
+                _default[key] = options[key];
+            }
+        }
+        if (_default.year < 2017) {
+            console.log('今年已经是2017年啦');
+            return false
+        }
+        if (_default.month > 12) {
+            console.log('月份不能大于12');
+            return false
+        }
+        if (_default.day > 31) {
+            console.log('日期不能大于31');
+            return false
+        }
+        if (_default.hour > 23) {
+            console.log('hour不能大于24');
+            return false
+        }
+        if (_default.minute > 59) {
+            console.log('minute不能大于60');
+            return false
+        }
+        if (_default.second > 59) {
+            console.log('second不能大于60');
+            return false
+        }
+        var future = new Date(_default.year, _default.month - 1, _default.day, _default.hour, _default.minute, _default.second);
+        setInterval(function() {
+            var now = new Date();
+            var hao = future - now;
+            var seconds = hao / 1000;
+            var day = parseInt(seconds / (24 * 60 * 60));
+            var nowsecond = seconds % (24 * 60 * 60);
+            var hour = parseInt(nowsecond / (60 * 60));
+            var hours = nowsecond % (60 * 60);
+            var minute = parseInt(hours / 60);
+            var minutes = hours % 60;
+            var second = parseInt(minutes % 60);
+            demo.innerHTML = "距离" + off + "还有" + day + '天' + hour + '时' + minute + '分' + second + '秒';
+        }, 300);
+    },
+    tBackTop: function(div) {
+        //5-->点击回到顶部
+        var goLink = div;
+        goLink.style.cursor = 'pointer'
+        goLink.style.display = 'none';
+        window.onscroll = computedDisplay;
+
+        function computedDisplay() {
+            var curTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var curHeight = document.documentElement.clientHeight || document.body.clientHeight;
+            goLink.style.display = curTop > curHeight / 2 ? 'block' : 'none';
+        }
+        goLink.onclick = function() {
+            window.onscroll = null;
+            this.style.display = 'none'
+            var duration = 500,
+                interval = 10,
+                target = document.documentElement.scrollTop || document.body.scrollTop;
+            var step = (target / duration) * interval;
+            var timer = window.setInterval(function() {
+                var curTop = document.documentElement.scrollTop || document.body.scrollTop;
+                // console.log(curTop)
+                if (curTop === 0) {
+                    // console.log(2);
+                    curTop = 0;
+                    window.clearInterval(timer);
+                    window.onscroll = computedDisplay;
+                    return;
+                }
+                curTop -= step;
+                document.documentElement.scrollTop = curTop;
+                document.body.scrollTop = curTop;
+            }, interval);
+        }
+    },
+
 
 }
 
